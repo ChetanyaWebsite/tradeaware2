@@ -8,7 +8,6 @@ const CourseHome = () => {
     <>
       <Back title='Explore Courses' />
       <CoursesCard />
-      <OnlineCourses />
     </>
   )
 }

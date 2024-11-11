@@ -1,100 +1,70 @@
-import React from "react"
-import { blog } from "../../../dummydata"
-import "./footer.css"
+import React from "react";
+import { blog } from "../../../dummydata";
+import { Box, Typography, Stack, TextField, IconButton } from "@mui/material";
+import { Facebook, Twitter, Instagram, PaperPlaneIcon } from "@mui/icons-material";
+import "./footer.css";
 
 const Footer = () => {
   return (
     <>
-      <section className='newletter'>
-        <div className='container flexSB'>
-          <div className='left row'>
-            <h1>Newsletter - Stay tune and get the latest update</h1>
-            <span>Far far away, behind the word mountains</span>
-          </div>
-          <div className='right row'>
-            <input type='text' placeholder='Enter email address' />
-            <i className='fa fa-paper-plane'></i>
-          </div>
-        </div>
-      </section>
+      {/*<Box sx={{ backgroundColor: '#1eb2a6', padding: '50px 0', color: '#fff' }}>
+         <Stack direction={{ xs: 'column', md: 'row' }} spacing={4} sx={{ justifyContent: 'space-between' }}>
+          <Box>
+            <Typography variant="h5" sx={{ fontWeight: 500 }}>Newsletter - Stay tuned and get the latest updates</Typography>
+            <Typography sx={{ color: 'rgba(255, 255, 255, 0.7)' }}>Far far away, behind the word mountains</Typography>
+          </Box>
+          <Stack direction="row" spacing={2} alignItems="center">
+            <TextField
+              variant="outlined"
+              placeholder="Enter email address"
+              fullWidth
+              sx={{
+                backgroundColor: 'white',
+                '& .MuiOutlinedInput-root': {
+                  height: 50
+                }
+              }}
+            />
+            <IconButton sx={{ backgroundColor: 'white', color: '#1eb2a6' }}>
+            </IconButton>
+          </Stack>
+        </Stack> 
+      </Box>*/}
+
       <footer>
-        <div className='container padding'>
-          <div className='box logo'>
-            <h1>ACADEMIA</h1>
-            <span>ONLINE EDUCATION & LEARNING</span>
-            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-
-            <i className='fab fa-facebook-f icon'></i>
-            <i className='fab fa-twitter icon'></i>
-            <i className='fab fa-instagram icon'></i>
-          </div>
-          <div className='box link'>
-            <h3>Explore</h3>
-            <ul>
-              <li>About Us</li>
-              <li>Services</li>
-              <li>Courses</li>
-              <li>Blog</li>
-              <li>Contact us</li>
-            </ul>
-          </div>
-          <div className='box link'>
-            <h3>Quick Links</h3>
-            <ul>
-              <li>Contact Us</li>
-              <li>Pricing</li>
-              <li>Terms & Conditions</li>
-              <li>Privacy</li>
-              <li>Feedbacks</li>
-            </ul>
-          </div>
-          <div className='box'>
-            <h3>Recent Post</h3>
-            {blog.slice(0, 3).map((val) => (
-              <div className='items flexSB'>
-                <div className='img'>
-                  <img src={val.cover} alt='' />
-                </div>
-                <div className='text'>
-                  <span>
-                    <i className='fa fa-calendar-alt'></i>
-                    <label htmlFor=''>{val.date}</label>
-                  </span>
-                  <span>
-                    <i className='fa fa-user'></i>
-                    <label htmlFor=''>{val.type}</label>
-                  </span>
-                  <h4>{val.title.slice(0, 40)}...</h4>
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className='box last'>
-            <h3>Have a Questions?</h3>
-            <ul>
-              <li>
-                <i className='fa fa-map'></i>
-                203 Fake St. Mountain View, San Francisco, California, USA
-              </li>
-              <li>
-                <i className='fa fa-phone-alt'></i>
-                +2 392 3929 210
-              </li>
-              <li>
-                <i className='fa fa-paper-plane'></i>
-                info@yourdomain.com
-              </li>
-            </ul>
-          </div>
-        </div>
+        <Box sx={{ backgroundColor: '#eeeeee', padding: '50px 0' ,backgroundColor: "#1eb2a6"}}>
+          <Box className="container">
+            <Box sx={{ maxWidth: '300px' }}>
+              <Typography variant="h4" sx={{ color: 'white' }}>ACADEMIA</Typography>
+              <Typography sx={{ color: 'white', marginBottom: 2 }}>ONLINE EDUCATION & LEARNING</Typography>
+              <Stack direction="row" spacing={2} alignItems="center">
+                <Typography sx={{ color: 'white', fontSize: 14 }}>
+                  A small river named Duden flows by their place and supplies it with the necessary regelialia.
+                </Typography>
+                <Stack direction="row" spacing={1}>
+                  <IconButton sx={{ backgroundColor: '#1eb2a6', color: 'white' }}>
+                    <Facebook />
+                  </IconButton>
+                  <IconButton sx={{ backgroundColor: '#1eb2a6', color: 'white' }}>
+                    <Twitter />
+                  </IconButton>
+                  <IconButton sx={{ backgroundColor: '#1eb2a6', color: 'white' }}>
+                    <Instagram />
+                  </IconButton>
+                </Stack>
+              </Stack>
+            </Box>
+          </Box>
+        </Box>
       </footer>
-      <div className='legal'>
-        <p>
-          Copyright ©2022 All rights reserved | This template is made with <i className='fa fa-heart'></i> by GorkhCoder
-        </p>
-      </div>
-    </>
-  )
-}
 
-export default Footer
+      <Box sx={{ textAlign: 'center', padding: '50px 0', color: 'grey', backgroundColor: '#e9e9e9' }}>
+        <Typography variant="body2">
+          Copyright ©2022 All rights reserved
+        </Typography>
+      </Box>
+    </>
+  );
+};
+
+export default Footer;
